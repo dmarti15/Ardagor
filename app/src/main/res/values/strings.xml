@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Ardagor</string>
+    <string name="app_name">Touch of Death</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="Pj1">Ninja</string>
+    <string name="Pj2">Guerrero</string>
+    <string name="Pj3">Arquera</string>
+    <string name="Pj4">Maga</string>
+    <string name="Pj5">Vampiro</string>
+    <string name="Pj6">Puntuaciones</string>
+    <string name="Pjr">Random</string>
 
 </resources>
