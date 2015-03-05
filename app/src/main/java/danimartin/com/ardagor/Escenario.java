@@ -22,6 +22,11 @@ public class Escenario {
                 this.x = 0;
                 this.y = 0;
                 break;
+            default:
+                this.background = BitmapFactory.decodeResource(gameView.getResources(), R.drawable.bg_grass);
+                this.x = 0;
+                this.y = 0;
+                break;
         }
         float scaleH = (float)background.getHeight()/(float)h;
         float scaleW = (float)background.getWidth()/(float)w;

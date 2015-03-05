@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:label="Juego" android:name=".Juego"></activity>
+        <activity android:label="Puntuaciones" android:name=".Puntuaciones"></activity>
     </application>
 
 </manifest>
