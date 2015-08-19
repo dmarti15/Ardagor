@@ -133,11 +133,12 @@ public class GameView extends SurfaceView implements OnTouchListener {
             enemy.onDraw(canvas);
             if (enemy.distancia(PJ) < enemy.getAncho() / 2) salir();
         }
-
+//TODO no funciona lux
         for (int i = temps.size() - 1; i >= 0; i--) {
             temps.get(i).onDraw(canvas);
             for (int e = enemies.size() - 1; e >= 0; e--) {
                 Sprite sprite = enemies.get(e);
+                Log.d("Lux: "+i, " Distancia: X: " + sprite.distancia(temps.get(i).getX(), temps.get(i).getY()) + " Radio: " + temps.get(i).getWidth() / 2+ " Daño: " +temps.get(i).damaging);
                 if (sprite.distancia(temps.get(i).getX(), temps.get(i).getY()) < temps.get(i).getWidth() / 2 && temps.get(i).damaging) {
                     enemies.remove(sprite);
                     puntuacion = puntuacion + sprite.getPts();
@@ -297,9 +298,11 @@ public class GameView extends SurfaceView implements OnTouchListener {
                 break;
             case MotionEvent.ACTION_UP:
                 if (disparo) {
+
                     PJ.Attack(x, y);
                 }
                 if (move) {
+                    PJ.move();
                     PJ.MoveTo(x, y);
                 }
                 break;

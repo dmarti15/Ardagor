@@ -8,9 +8,9 @@ import android.graphics.Rect;
 import java.util.List;
 
 /**
- * Created by d.martin on 15/12/2014.
+ * Created by d.martin on 19/08/2015.
  */
-public class TempSprite {
+public class Lux extends TempSprite {
 
 
     private float x;
@@ -21,14 +21,14 @@ public class TempSprite {
     private int currentFrame=0;
     private int Steps=0;
     private int BMP_COLUMNS;
-    boolean damaging;
+    boolean damaging=true;
 
     private int width;
     private int height;
-    private List<TempSprite> temps;
+    private List<Lux> temps;
 
-    public TempSprite(GameView gameView, float x,float y) {
-
+    public Lux(GameView gameView, float x,float y){
+        super(gameView,x,y);
         this.bmp = BitmapFactory.decodeResource(gameView.getResources(), R.drawable.lux);
         life = 48;
         BMP_COLUMNS=12;
@@ -56,7 +56,17 @@ public class TempSprite {
     }
 
     private void update() {
+        //if (currentFrame > 5) {
+            damaging = true;
+        //} else {
+        //    damaging = false;
+        //}
         life--;
+        if(Steps==4){
+            currentFrame = ++currentFrame % BMP_COLUMNS;
+            Steps=0;
+        }
+        Steps++;
     }
 
 

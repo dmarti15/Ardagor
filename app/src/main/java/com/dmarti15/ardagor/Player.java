@@ -26,10 +26,6 @@ public class Player extends Sprite{
         this.modSpeed = modSpeed;
     }
 
-    public void Atack(float x, float y){
-        super.Attack(x,y);
-
-    }
 
 
     public void MoveTo(float x, float y) {

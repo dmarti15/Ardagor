@@ -22,7 +22,7 @@ public class wizard extends Player {
     }
 
     public void Attack(float x, float y){
-        gameView.addTempSprite(new TempSprite(gameView, x, y, 1));
+        gameView.addTempSprite(new Lux(gameView, x, y));
     }
 }
 

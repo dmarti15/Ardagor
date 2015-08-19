@@ -41,11 +41,10 @@ public class Enemy extends Sprite{
                 incrementaPos(1);
         }
     }
-    public void Attack(float x, float y){
-        gameView.addTempSprite(new TempSprite(gameView, x, y, 1));
-    }
+
     public void MoveTo(float x, float y) {
-        this.setxSpeed((x - gameView.PJ.getposX()) / 100);
-        this.setySpeed((y - gameView.PJ.getposY()) / 100);
+        super.MoveTo(gameView.PJ.getposX(),gameView.PJ.getposY());
+        //this.setxSpeed((x - gameView.PJ.getposX()) / 100);
+        //this.setySpeed((y - gameView.PJ.getposY()) / 100);
     }
 }

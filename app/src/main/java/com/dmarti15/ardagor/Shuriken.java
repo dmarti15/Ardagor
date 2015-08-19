@@ -39,7 +39,7 @@ public class Shuriken extends Projectile{
     private List<Projectile> Projectiles;
 
 
-    public Shuriken(GameView gameView, float fX, float fY, float tX,float tY,int tipoSprite) {
+    public Shuriken(GameView gameView, float fX, float fY, float tX,float tY) {
         super(gameView, fX, fY, tX, tY, 2);
         this.gameView = gameView;
         this.bmp = BitmapFactory.decodeResource(gameView.getResources(), R.drawable.shuriken);

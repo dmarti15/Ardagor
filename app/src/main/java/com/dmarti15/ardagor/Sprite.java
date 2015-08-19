@@ -27,16 +27,31 @@ public class Sprite {
 
 
     //TODO Implementar estados
+    // direction = 0 stop, 1 Move, 2 Atack, 3 special
+    private int estado;
+
     public int getEstado() {
         return estado;
     }
 
-    public void setEstado(int estado) {
-        this.estado = estado;
+    public void stop() {
+        this.estado = 0;
+        incrementaPos(0);
+    }
+    public void move() {
+        this.estado = 1;
+        incrementaPos(1);
+    }
+    public void atack() {
+        this.estado = 2;
+        incrementaPos(0);
+    }
+    public void special() {
+        this.estado = 3;
+        incrementaPos(0);
     }
 
-    // direction = 0 stop, 1 Move, 2 Atack, 3 special
-    private int estado;
+
 
     private int posX = 0;
     private int posY = 0;
@@ -173,27 +188,9 @@ public class Sprite {
         return x2 > posX && x2 < posX + width && y2 > posY && y2 < posY + height;
     }
 
-    public void Actua(int accion){
-        switch(accion) {
-            case 1:
-                //Moverse
-                incrementaPos(1);
-                break;
-            case 2:
-                //Atacar
-                incrementaPos(1);
-                break;
-            case 3:
-                //Defenderse
-                incrementaPos(1);
-                break;
-            default:
-                incrementaPos(1);
-        }
+    public void Attack(float x, float y) {
     }
-    public void Attack(float x, float y){
-        gameView.addTempSprite(new TempSprite(gameView, x, y, 1));
-    }
+
     public void MoveTo(float x, float y) {
         this.setxSpeed((x - posX) / 100);
         this.setySpeed((y - posY) / 100);
